@@ -1,7 +1,7 @@
-import { StepProps } from "../config/interfaces";
+import { StepSidebarProps } from "../config/interfaces";
 import state from "../config/store";
 
-const Step = ({ step, label, isActive }: StepProps) => {
+const StepSidebar = ({ step, label, isActive }: StepSidebarProps) => {
   return (
     <div
       onClick={() => {
@@ -28,4 +28,4 @@ const Step = ({ step, label, isActive }: StepProps) => {
   );
 };
 
-export default Step;
+export default StepSidebar;
