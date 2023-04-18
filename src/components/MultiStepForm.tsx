@@ -8,6 +8,7 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+import { slideAnimation } from "../config/motion";
 
 const MultiStepForm = () => {
   const snap = useSnapshot(state);
@@ -30,15 +31,12 @@ const MultiStepForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form className="flex flex-col h-full w-[550px]">
+          <Form className="flex flex-col h-[450px] w-[550px] relative">
             <AnimatePresence>
               <motion.div
                 className="flex-1 w-[450px] mt-8"
                 key={snap.activeStep}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                {...slideAnimation("right")}
               >
                 {snap.activeStep === 1 && (
                   <StepOne
@@ -55,14 +53,14 @@ const MultiStepForm = () => {
                 {snap.activeStep === 4 && <StepFour />}
               </motion.div>
             </AnimatePresence>
-            <div className="flex flex-row justify-between w-[450px]">
+            <div className="flex flex-row justify-between w-[450px] absolute bottom-0">
               {snap.activeStep > 1 ? (
                 <button
                   type="button"
                   className="text-gray-400 font-bold hover:text-blue-950"
                   onClick={() => --state.activeStep}
                 >
-                  Prev
+                  Go Back
                 </button>
               ) : (
                 <div />
