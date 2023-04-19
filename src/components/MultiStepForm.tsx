@@ -19,13 +19,13 @@ const MultiStepForm = () => {
   const desc = stepsArray[snap.activeStep - 1].description;
 
   const handleSubmit = (values: FormFields) => {
-    console.log("submiting");
+    console.log("submitting");
     setConfirmed(true);
   };
 
   return (
     <>
-      {confirmed ? (
+      {!confirmed ? (
         <div className="flex flex-col py-8">
           <div>
             <h2 className="text-3xl font-bold text-blue-950 mb-2">{title}</h2>
@@ -61,24 +61,22 @@ const MultiStepForm = () => {
                 </AnimatePresence>
                 <div className="flex flex-row justify-between w-[450px] absolute bottom-0">
                   {snap.activeStep > 1 ? (
-                    <button
-                      type="button"
-                      className="text-gray-400 font-bold hover:text-blue-950"
+                    <p
+                      className="text-gray-400 font-bold hover:text-blue-950 cursor-pointer flex items-center"
                       onClick={() => --state.activeStep}
                     >
                       Go Back
-                    </button>
+                    </p>
                   ) : (
                     <div />
                   )}
                   {snap.activeStep < 4 ? (
-                    <button
-                      type="button"
+                    <p
                       onClick={() => ++state.activeStep}
-                      className="bg-blue-950 hover:bg-blue-900 rounded-lg border-none px-4 py-2 text-white"
+                      className="bg-blue-950 hover:bg-blue-900 rounded-lg border-none px-4 py-2 text-white cursor-pointer"
                     >
                       Next Step
-                    </button>
+                    </p>
                   ) : (
                     <button
                       type="submit"

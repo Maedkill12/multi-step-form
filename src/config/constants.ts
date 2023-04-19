@@ -95,9 +95,7 @@ const formInitialValues: FormFields = {
 const formSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
-  phone: Yup.string()
-    .matches(/^\+?\d{2}\s?\d{10}$/, "Invalid phone number")
-    .required("Phone number is required"),
+  phone: Yup.string().required("Phone number is required"),
   isMonthly: Yup.boolean().required("Billing frequency is required"),
   plan: Yup.object().required("Plan is required"),
   addons: Yup.array()

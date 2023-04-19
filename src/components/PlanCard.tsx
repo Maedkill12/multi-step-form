@@ -1,5 +1,4 @@
 import { Plan } from "../config/interfaces";
-import "../assets/_3cd50088-83f8-4065-b95e-bec87d7e8889.jpg";
 import { useSnapshot } from "valtio";
 import state from "../config/store";
 
