@@ -21,8 +21,8 @@ const StepSidebar = ({ step, label, isActive }: StepSidebarProps) => {
         <p className="text-lg font-bold">{step}</p>
       </div>
       <div className="flex-1 flex flex-col">
-        <p className="text-xs text-slate-300">STEP {step}</p>
-        <p className="text-sm font-bold text-white">{label}</p>
+        <p className="text-xs text-slate-300 hidden md:block">STEP {step}</p>
+        <p className="text-sm font-bold text-white hidden md:block">{label}</p>
       </div>
     </div>
   );

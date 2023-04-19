@@ -26,7 +26,7 @@ const MultiStepForm = () => {
   return (
     <>
       {!confirmed ? (
-        <div className="flex flex-col py-8">
+        <div className="flex flex-col py-8 mt-[100px] md:mt-0 bg-white md:bg-none md:relative z-10 px-4 md:px-0 rounded-lg md:rounded-none">
           <div>
             <h2 className="text-3xl font-bold text-blue-950 mb-2">{title}</h2>
             <p className="text-base text-gray-400">{desc}</p>
@@ -37,12 +37,12 @@ const MultiStepForm = () => {
             onSubmit={handleSubmit}
           >
             {({ errors, touched }) => (
-              <Form className="flex flex-col h-[450px] w-[550px] relative">
+              <Form className="flex flex-col md:h-[450px] w-full md:w-[450px] lg:w-[550px] md:relative">
                 <AnimatePresence>
                   <motion.div
-                    className="flex-1 w-[450px] mt-8"
+                    className="md:flex-1 w-full md:w-[450px] mt-8"
                     key={snap.activeStep}
-                    {...slideAnimation("right")}
+                    {...slideAnimation("down")}
                   >
                     {snap.activeStep === 1 && (
                       <StepOne
@@ -59,7 +59,7 @@ const MultiStepForm = () => {
                     {snap.activeStep === 4 && <StepFour />}
                   </motion.div>
                 </AnimatePresence>
-                <div className="flex flex-row justify-between w-[450px] absolute bottom-0">
+                <div className="flex flex-row justify-between w-full left-0 md:w-[450px] absolute bottom-0 bg-white md:bg-none px-2 py-4 md:px-0 md:py-0">
                   {snap.activeStep > 1 ? (
                     <p
                       className="text-gray-400 font-bold hover:text-blue-950 cursor-pointer flex items-center"

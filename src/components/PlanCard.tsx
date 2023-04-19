@@ -21,11 +21,11 @@ const PlanCard = ({
   return (
     <div
       onClick={() => setSelected(id)}
-      className={`py-4 px-3 flex flex-col justify-between border border-gray-400 hover:border-blue-950 w-[125px] h-[175px] rounded-lg cursor-pointer ${
+      className={`py-4 px-3 flex flex-row md:flex-col gap-3 md:gap-0 md:justify-between border border-gray-400 hover:border-blue-950 w-full md:w-[125px] h-fit md:h-[175px] rounded-lg cursor-pointer ${
         isSelected && "bg-slate-100 border-blue-950"
       }`}
     >
-      <div className="flex-1">
+      <div className="md:flex-1">
         <img src={imgPath} alt="plan-icon" />
       </div>
       <div>

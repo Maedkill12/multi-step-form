@@ -8,7 +8,7 @@ const StepTwo = () => {
   const snap = useSnapshot(state);
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-0 md:justify-between">
         {plans.map((plan) => (
           <PlanCard
             key={plan.id}
