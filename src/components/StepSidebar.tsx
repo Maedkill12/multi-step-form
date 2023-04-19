@@ -1,7 +1,12 @@
-import { StepSidebarProps } from "../config/interfaces";
 import state from "../config/store";
 
-const StepSidebar = ({ step, label, isActive }: StepSidebarProps) => {
+interface Props {
+  step: number;
+  label: string;
+  isActive: boolean;
+}
+
+const StepSidebar = ({ step, label, isActive }: Props) => {
   return (
     <div
       onClick={() => {
